@@ -1,0 +1,799 @@
+/* --- 1. RESET E VARIAVEIS GLOBAIS --- */
+:root {
+    --color-primary: #00bcd4; /* Azul Ciano - A cor de destaque */
+    --color-secondary: #0097a7; /* Ciano Escuro */
+    --color-background: #1e1e1e; /* Fundo Escuro Principal */
+    --color-surface: #2a2a2a; /* Card/Superfície Escura */
+    --color-text-light: #f5f5f5; /* Texto Claro */
+    --color-text-muted: #aaaaaa; /* Texto Secundário */
+    --font-family-main: 'Inter', sans-serif;
+    --spacing-lg: 60px;
+    --spacing-md: 40px;
+    --border-radius: 8px; /* Nova variável para raio da borda */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-main);
+    color: var(--color-text-light);
+    background-color: var(--color-background);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Utilitário para centralizar conteúdo */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 2. TIPOGRAFIA GERAL --- */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-primary); /* Títulos com destaque */
+}
+
+h3.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-secondary);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.section {
+    padding: var(--spacing-lg) 0;
+}
+
+.bg-dark {
+    background-color: var(--color-surface);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* --- 3. BOTÕES --- */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+    margin-right: 15px;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-secondary);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+/* --- 4. BARRA DE NAVEGAÇÃO E LOGO PERSONALIZADO --- */
+nav {
+    background-color: var(--color-surface);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex; /* Permite alinhar o ícone e o texto lado a lado */
+    align-items: center; /* Alinha verticalmente no centro */
+    font-size: 1.8rem; /* Tamanho da fonte do nome */
+    font-weight: 700;
+    color: var(--color-text-light); /* Cor do texto do nome */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-logo {
+    height: 40px; /* Altura padrão para desktop */
+    width: 40px;  /* Largura padrão para desktop */
+    margin-right: 10px; /* Espaço entre o logo e o texto */
+    vertical-align: middle;
+    /* Se o seu logo for redondo e não parecer um círculo perfeito, adicione: */
+    /* border-radius: 50%; */ 
+}
+
+.logo-text {
+    position: relative;
+    padding-left: 15px; 
+}
+
+.logo-text::before {
+    content: "|";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: 300;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.logo .dot {
+    color: var(--color-primary);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-weight: 400;
+    margin-left: 25px;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--color-primary);
+}
+
+
+/* --- 5. SEÇÃO PRINCIPAL (HERO) --- */
+.hero {
+    background-color: var(--color-background);
+    padding: 100px 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.intro {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.title-main {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.tagline {
+    font-size: 1.3rem;
+    color: var(--color-text-muted);
+    margin-bottom: 30px;
+}
+
+/* IMAGEM DE PERFIL: FLUTUAÇÃO E SOMBRA */
+.hero-image {
+    position: relative; 
+    z-index: 4; 
+}
+
+.hero-image img {
+    border-radius: 50%; 
+    max-width: 300px; 
+    width: 100%; 
+    height: auto;
+    display: block;
+    box-shadow: 0 0 0 10px var(--color-primary), /* Borda ciana */
+                0 15px 30px rgba(0, 0, 0, 0.5); /* Sombra mais forte abaixo */
+    animation: float 3s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+        box-shadow: 0 0 0 10px var(--color-primary), 0 15px 30px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+        /* Adicione uma nova variável de cor para um brilho mais claro, se desejar */
+        /* Ex: --color-primary-light: #4dd0e1; */
+        transform: translateY(-10px) rotate(1deg); 
+        box-shadow: 0 0 0 12px var(--color-primary), 0 25px 40px rgba(0, 0, 0, 0.7); 
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+        box-shadow: 0 0 0 10px var(--color-primary), 0 15px 30px rgba(0, 0, 0, 0.5);
+    }
+}
+
+
+/* ================================================= */
+/* --- SEÇÃO HERO VÍDEO E OVERLAY --- */
+/* ================================================= */
+
+.hero-video {
+    position: relative;
+    padding: 0; /* Remove o padding da seção para que o vídeo ocupe 100% da área */
+    min-height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ANIMAÇÃO DE PARTÍCULAS (BOLHAS DE AR) */
+.animated-particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Nível de z-index do vídeo */
+    pointer-events: none; /* Garante que as partículas não bloqueiem cliques */
+}
+
+.particle {
+    position: absolute;
+    bottom: 0; /* Começa de baixo, como se estivesse subindo da água */
+    background: rgba(255, 255, 255, 0.2); /* Cor branca suave */
+    border-radius: 50%; /* Formato de bolha */
+    animation: bubble-up 15s linear infinite; /* Animação principal */
+}
+
+/* Define as propriedades iniciais e de animação para cada partícula */
+.animated-particles-container .particle:nth-child(1) {
+    width: 10px; height: 10px; left: 10%; animation-duration: 12s; opacity: 0.6;
+}
+.animated-particles-container .particle:nth-child(2) {
+    width: 15px; height: 15px; left: 20%; animation-duration: 15s; opacity: 0.4;
+    animation-delay: 2s;
+}
+.animated-particles-container .particle:nth-child(3) {
+    width: 8px; height: 8px; left: 35%; animation-duration: 10s; opacity: 0.7;
+    animation-delay: 4s;
+}
+.animated-particles-container .particle:nth-child(4) {
+    width: 20px; height: 20px; left: 50%; animation-duration: 18s; opacity: 0.3;
+    animation-delay: 6s;
+}
+.animated-particles-container .particle:nth-child(5) {
+    width: 12px; height: 12px; left: 65%; animation-duration: 14s; opacity: 0.5;
+    animation-delay: 8s;
+}
+.animated-particles-container .particle:nth-child(6) {
+    width: 17px; height: 17px; left: 75%; animation-duration: 16s; opacity: 0.4;
+    animation-delay: 10s;
+}
+.animated-particles-container .particle:nth-child(7) {
+    width: 6px; height: 6px; left: 85%; animation-duration: 9s; opacity: 0.8;
+    animation-delay: 12s;
+}
+.animated-particles-container .particle:nth-child(8) {
+    width: 14px; height: 14px; left: 95%; animation-duration: 11s; opacity: 0.5;
+    animation-delay: 14s;
+}
+.animated-particles-container .particle:nth-child(9) {
+    width: 9px; height: 9px; left: 45%; animation-duration: 13s; opacity: 0.7;
+    animation-delay: 1s;
+}
+.animated-particles-container .particle:nth-child(10) {
+    width: 18px; height: 18px; left: 5%; animation-duration: 17s; opacity: 0.3;
+    animation-delay: 3s;
+}
+
+/* Keyframes de Animação: Sobe e desaparece */
+@keyframes bubble-up {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg); /* Sobe até o topo da tela */
+        opacity: 0; /* Desaparece suavemente */
+    }
+}
+
+/* 1. Estilo para o Contêiner do Vídeo e o Vídeo */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1; /* Abaixo do overlay e do conteúdo */
+}
+
+.video-background video {
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza o vídeo */
+    object-fit: cover;
+}
+
+/* 2. Estilo para o Overlay (Gradiente Escuro) */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Fica entre o vídeo e o conteúdo */
+    background: radial-gradient(circle at center, rgba(30, 33, 36, 0) 0%, rgba(30, 33, 36, 0.2) 50%, rgba(30, 33, 36, 0.8) 100%),
+                linear-gradient(to top, rgba(30, 33, 36, 1) 0%, rgba(30, 33, 36, 0) 50%);
+}
+
+/* 3. Garante que o Conteúdo do Hero Fique na Frente */
+.hero-content-container {
+    position: relative;
+    z-index: 3; /* Sempre na frente do overlay e do vídeo */
+    padding: 100px 25px; /* Adiciona o padding de volta para o conteúdo */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* --- ONDA SVG E ANIMAÇÃO (VIBE PRAIANA) --- */
+.wave-container {
+    width: 100%;
+    height: 100px; /* Altura da área visível da onda */
+    margin-top: -100px; /* Puxa para cima para cobrir o final da seção hero */
+    z-index: 4; /* Garante que a onda fique sobre o overlay e o vídeo */
+    position: relative;
+    overflow: hidden; 
+}
+
+.wave-container svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    animation: waveMovement 8s ease-in-out infinite alternate; 
+    transform-origin: bottom; 
+}
+
+/* 1. Animação de Movimento Lateral */
+@keyframes waveMovement {
+    0% {
+        transform: translate3d(-10px, 0, 0) scaleY(1);
+    }
+    50% {
+        transform: translate3d(10px, 0, 0) scaleY(1.05); /* Levemente mais alta no meio */
+    }
+    100% {
+        transform: translate3d(-10px, 0, 0) scaleY(1);
+    }
+}
+
+/* 2. Animação de Cor/Sombra (Brilho da Água) */
+.wave-container path {
+    fill: var(--color-surface); /* Cor base igual ao fundo da seção #about */
+    transition: fill 0.3s ease;
+    filter: drop-shadow(0 -5px 10px rgba(0, 229, 255, 0.2)); 
+}
+
+
+/* --- 6. SEÇÃO HABILIDADES (STACK) --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.skill-category {
+    background-color: var(--color-background);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    border-left: 5px solid var(--color-primary);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.skill-category h4 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--color-text-light);
+}
+
+.skills-list {
+    list-style-type: none;
+}
+
+.skills-list li {
+    padding: 5px 0;
+    color: var(--color-text-muted);
+}
+
+.skills-list li::before {
+    content: "•";
+    color: var(--color-primary);
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* --- 7. SEÇÃO PROJETOS --- */
+.section-subtitle {
+    text-align: center;
+    color: var(--color-text-muted);
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.projects-grid {
+    display: grid; /* Mantém o grid para esta seção, se for para cards fixos */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-methodology-statement {
+    padding: 20px;
+    border-radius: var(--border-radius);
+    background-color: var(--color-surface);
+    margin-bottom: 40px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Removido o estilo .project-card, pois os projetos agora serão um carrossel */
+
+
+/* --- ESTILOS PARA O CARROSSEL (GERAL: STACK E LINKEDIN) --- */
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1200px; 
+}
+
+.carousel-container {
+    display: flex;
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+    gap: 30px;
+    padding-bottom: 20px; 
+    scrollbar-width: none; 
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Estilo para itens do carrossel de STACK */
+.carousel-item.stack-card {
+    flex: 0 0 320px; /* Largura padrão para cards de stack */
+    scroll-snap-align: start; 
+    min-width: 280px; 
+    background-color: var(--color-background);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    border-left: 5px solid var(--color-primary);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.stack-card h4 {
+    color: var(--color-text-light); /* Corrigindo cor do título do card */
+}
+
+.tech-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    color: var(--color-text-muted); /* Ícones menores e mais suaves */
+}
+.tech-icons i:hover {
+    color: var(--color-primary);
+    transform: scale(1.1);
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+
+/* ESTILO DOS BOTÕES DE NAVEGAÇÃO DO CARROSSEL */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(36, 36, 36, 0.7);
+    color: var(--color-primary);
+    border: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.5rem;
+    opacity: 0.8;
+    transition: opacity 0.3s, background 0.3s;
+    border-radius: var(--border-radius);
+}
+
+.carousel-nav:hover {
+    opacity: 1;
+    background: var(--color-surface);
+}
+
+.carousel-nav.prev {
+    left: 0;
+}
+
+.carousel-nav.next {
+    right: 0;
+}
+
+/* SEÇÃO CARROSSEL DE LINKEDIN (INSIGHTS) */
+.insights-grid-iframe {
+    /* Largura ajustada: máximo de 550px por card */
+    justify-content: center; /* Centraliza os itens quando há espaço */
+    gap: 30px; 
+    padding-bottom: 20px;
+}
+
+.iframe-container {
+    position: relative;
+    max-width: 550px; 
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    flex: 0 0 550px; 
+    scroll-snap-align: start; 
+}
+
+.iframe-container iframe {
+    display: block;
+    width: 100%; 
+    height: 672px; 
+    border: none;
+    border-radius: var(--border-radius);
+}
+
+.carousel-item-linkedin {
+    flex: 0 0 550px; 
+    scroll-snap-align: start;
+}
+
+#linkedin-insights {
+    background-color: var(--color-surface); /* Usando variável para consistência */
+}
+
+/* --- 8. RODAPÉ/CONTATO --- */
+footer {
+    padding: var(--spacing-md) 0;
+    text-align: center;
+    border-top: 1px solid var(--color-surface);
+}
+
+.contact-links {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.contact-item {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.contact-item:hover {
+    color: var(--color-primary);
+}
+
+.footer-note {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+/* --- 9. RESPONSIVIDADE GERAL --- */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 30px; /* Mais padding nas laterais em telas maiores que 768px mas menores que 1200px */
+    }
+}
+
+@media (max-width: 992px) {
+    .title-main {
+        font-size: 3rem;
+    }
+    .tagline {
+        font-size: 1.2rem;
+    }
+    .hero-image img {
+        max-width: 280px;
+    }
+    .hero-content-container {
+        padding: 80px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Navegação Ajustes */
+    nav .container {
+        flex-direction: column;
+        align-items: flex-start; /* Alinha logo e menu à esquerda no mobile */
+    }
+    .logo {
+        margin-bottom: 15px; /* Espaço entre o logo e o menu mobile */
+        font-size: 1.6rem;
+    }
+    .nav-logo {
+        height: 35px; /* Reduz o tamanho do logo em telas menores */
+        width: 35px;
+    }
+    .logo-text {
+        padding-left: 10px;
+    }
+    .logo-text::before {
+        content: ""; /* Remove a barra vertical no mobile */
+    }
+    .nav-links {
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px 0;
+        justify-content: space-around; /* Distribui os links uniformemente */
+        flex-wrap: wrap; /* Permite que os links quebrem linha */
+        display: none; /* Esconde o menu por padrão no mobile */
+        flex-direction: column; /* Links em coluna para o menu expandido */
+        text-align: center;
+    }
+    .nav-links.active {
+        display: flex; /* Mostra o menu quando ativo */
+    }
+    .nav-links li {
+        width: 100%; /* Cada item ocupa a largura total */
+        margin: 10px 0; /* Espaçamento entre os itens */
+    }
+    .nav-links li a {
+        margin: 0; /* Remove margem lateral */
+        padding: 10px 0;
+        display: block; /* Ocupa a largura total para o clique */
+    }
+    .menu-toggle {
+        display: block; /* Mostra o botão de menu no mobile */
+        position: absolute; /* Posiciona o ícone do menu no canto superior direito */
+        right: 20px;
+        top: 20px;
+        font-size: 1.8rem;
+        color: var(--color-primary);
+        cursor: pointer;
+        z-index: 101; /* Acima de tudo */
+    }
+
+    /* Hero Section Ajustes */
+    .hero .container {
+        flex-direction: column-reverse; /* Coloca a foto em cima no mobile */
+        text-align: center;
+    }
+    .hero-image {
+        margin-bottom: 30px;
+    }
+    .hero-image img {
+        max-width: 250px;
+    }
+    .title-main {
+        font-size: 2.5rem;
+    }
+    .tagline {
+        font-size: 1.1rem;
+    }
+    .btn {
+        margin-right: 10px;
+        padding: 10px 20px;
+    }
+
+    /* Carrossel Ajustes */
+    .carousel-nav {
+        display: none; /* Esconde botões no mobile, incentivando o swipe */
+    }
+    .carousel-container {
+        padding: 0 20px 20px 20px; /* Adiciona padding para os itens não colarem na borda */
+        scroll-snap-type: x proximity; /* Snap mais suave no mobile */
+    }
+    .carousel-item.stack-card {
+        flex: 0 0 90%; /* No mobile, o item ocupa 90% da tela para mostrar que há mais */
+    }
+    .carousel-item-linkedin {
+        flex: 0 0 90%; /* Item ocupa 90% da tela no mobile */
+    }
+    .iframe-container {
+        max-width: 100%; 
+    }
+    .iframe-container iframe {
+        height: 500px; /* Altura ajustada para visualização mobile */
+    }
+    
+    /* Contato Ajustes */
+    .contact-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* --- 8. RODAPÉ --- */
+.main-footer {
+    background-color: var(--color-background); /* Ou um tom ainda mais escuro se quiser quebrar */
+    padding: var(--spacing-md) 0;
+    text-align: center;
+    border-top: 2px solid var(--color-surface); /* Borda superior para separar */
+    color: var(--color-text-muted); /* Cor de texto padrão do footer */
+    font-size: 0.95rem;
+}
+
+.footer-social-links {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Espaçamento entre os ícones */
+}
+
+.social-icon {
+    color: var(--color-text-light); /* Cor inicial dos ícones */
+    font-size: 1.8rem; /* Tamanho dos ícones */
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: none; /* Remove sublinhado padrão */
+}
+
+.social-icon:hover {
+    color: var(--color-primary); /* Ícones ficam ciano ao passar o mouse */
+    transform: translateY(-5px) scale(1.1); /* Efeito de "subir" e "aumentar" */
+}
+
+.footer-copyright {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.footer-made-by {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-top: 5px;
+}
+
+/* Responsividade para o rodapé */
+@media (max-width: 768px) {
+    .main-footer {
+        padding: var(--spacing-md) 15px; /* Adiciona padding lateral em mobile */
+    }
+    .footer-social-links {
+        gap: 20px; /* Reduz espaçamento em mobile */
+        margin: 20px 0;
+    }
+    .social-icon {
+        font-size: 1.6rem; /* Reduz tamanho dos ícones em mobile */
+    }
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J. V. Abreu | Portfolio</title>
+    <link rel="icon" type="images/" href="images/logo.webp">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" as="style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="index.js"></script>
+    <script src="carousel-effects.js"></script>
+</head>
+<body>
+
+   <nav>
+        <div class="container">
+            <h1 class="logo">
+                <img src="images/logo transparente.png" alt="Logo JV Sousa" class="nav-logo">
+                <span class="logo-text">João Vitor de Abreu<span class="dot">.</span></span>
+            </h1>
+            <ul class="nav-links" id="navMenu">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#stack">Stack</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#linkedin-insights">Insights</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <p class="intro">Analista de Dados & BI | Eng. de Software em Formação</p>
+                <h2 class="title-main">João Vitor de Abreu Sousa</h2>
+                <p class="tagline">Transformando dados brutos em soluções estratégicas e insights acionáveis que geram valor real.</p>
+                <a href="#projects" class="btn btn-primary"><i class="fas fa-chart-line"></i> Ver Projetos</a>
+                <a href="docs/CV - JOÃO VITOR DE ABREU SOUSA 08.2025D.pdf" class="btn btn-secondary" target="_blank"><i class="fas fa-download"></i> Download CV</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/Perfil.jpeg" alt="Foto Profissional de João Vitor">
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h3 class="section-title">Minha Trajetória</h3>
+            <p>
+                Sou Engenheiro de Software em formação pela UNISA (PROUNI), com sólida base técnica pelo SENAI e experiência que une administração, infraestrutura e análise de dados. Atuei como auxiliar administrativo na Engenharia Ativa On-site, estagiário de TI na São Paulo Turismo (Prefeitura de SP) e na Loja de Calles, com foco em infraestrutura de TI. Atualmente, integro o Santander, onde atuo em monitoramento e análise de dados, transformando números em insights estratégicos que impulsionam decisões de negócio.
+
+                Sou movido por dados acredito no poder que eles têm de contar histórias, revelar oportunidades e guiar estratégias com precisão. Minha missão é transformar informações em valor real, unindo tecnologia, curiosidade e propósito.
+            </p>
+        </div>
+    </section>
+
+    <section id="stack" class="section bg-dark">
+        <div class="container">
+            <h3 class="section-title text-center">Stack Técnica & Proficiências</h3>
+            
+            <div class="carousel-wrapper">
+                <button class="carousel-nav prev" id="prevStack"><i class="fas fa-chevron-left"></i></button>
+
+                <div class="skills-grid carousel-container" id="stackCarousel">
+
+                      <div class="skill-category carousel-item stack-card">
+                        <h4><i class="fas fa-users"></i> Soft Skills & Competências</h4>
+                        <div class="tech-icons">
+                            <i class="fas fa-handshake" title="Trabalho em Equipe"></i>
+                            <i class="fas fa-comments" title="Comunicação"></i>
+                            <i class="fas fa-lightbulb" title="Proatividade"></i>
+                        </div>
+                        <ul class="skills-list">
+                            <li>Comunicação Eficaz: Tradução de Insights Técnicos para o Negócio.</li>
+                            <li>Orientação a Resultados e Proatividade.</li>
+                            <li>Solução de Problemas.</li>
+                            <li>Trabalho em Equipe.</li>
+                            <li>Analítico e Comprometido.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category carousel-item stack-card">
+                        <h4><i class="fas fa-chart-area"></i> Business Intelligence & Análise</h4>
+                        <div class="tech-icons">
+                            <i class="fab fa-microsoft" title="Power BI"></i>
+                            <i class="fas fa-chart-pie" title="Looker Studio"></i>
+                            <i class="fas fa-chart-bar" title="Qlik Sense"></i>
+                            <i class="fas fa-file-excel" title="Excel Avançado"></i>
+                        </div>
+                        <ul class="skills-list">
+                            <li>Business Intelligence (BI): Power BI, Looker Studio, Qlik Sense.</li>
+                            <li>Linguagens de Análise: DAX e M-language.</li>
+                            <li>Desenvolvimento e Análise de BI.</li>
+                            <li>Storytelling com Dados.</li>
+                            <li>Produtividade: Excel Avançado.</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category carousel-item stack-card">
+                        <h4><i class="fas fa-code"></i> Engenharia de Dados & Dev.</h4>
+                        <div class="tech-icons">
+                            <i class="fab fa-python" title="Python (Pandas, NumPy)"></i>
+                            <i class="fas fa-database" title="SQL"></i>
+                            <i class="fas fa-cloud" title="AWS / Big Query"></i>
+                            <i class="fab fa-java" title="Java"></i>
+                        </div>
+                        <ul class="skills-list">
+                            <li>Criação de Pipelines de Dados.</li>
+                            <li>SQL (DDL, DML e DCL).</li>
+                            <li>Modelagem e Organização de Dados (SQL, Python/NumPy).</li>
+                            <li>Programação: Python (com Pandas).</li>
+                            <li>Desenvolvimento de APIs (Java, Spring Boot, Postman).</li>
+                            <li>Cloud/Big Data: AWS / Big Query.</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category carousel-item stack-card">
+                        <h4><i class="fas fa-briefcase"></i> Versionamento & Processos</h4>
+                        <div class="tech-icons">
+                            <i class="fab fa-git" title="Git"></i>
+                            <i class="fab fa-github" title="GitHub"></i>
+                            <i class="fas fa-cogs" title="Metodologias Ágeis"></i>
+                            <i class="fas fa-project-diagram" title="Solução de Problemas"></i>
+                        </div>
+                        <ul class="skills-list">
+                            <li>Versionamento de Código (Git & GitHub).</li>
+                            <li>Metodologias: Metodologias Ágeis.</li>
+                            <li>Formação: Eng. de Software e Técnico de Sistemas.</li>
+                        </ul>
+                    </div>
+                    
+                  
+
+                </div>
+                
+                <button class="carousel-nav next" id="nextStack"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+    <div class="container">
+        <h3 class="section-title text-center">Projetos: Metodologia e Lançamentos</h3>
+        
+        <div class="project-methodology-statement text-center">
+            
+            <i class="fas fa-tools icon-large" style="font-size: 3.5rem; color: var(--color-primary); margin-bottom: 20px;"></i>
+            
+          
+            <p style="font-size: 1.3rem; font-weight: 600; max-width: 900px; margin: 0 auto 30px;">
+                Cada projeto de Análise ou Engenharia de Dados será lançado em duas plataformas: o código completo no GitHub e a explicação técnica e resultados em vídeo no YouTube. Aqui será a vitrine dos projetos.
+            </p>
+
+            <p style="font-size: 1.1rem; color: var(--color-text-muted);">
+                Os projetos já estão no forno! Em breve, você poderá navegar por soluções robustas, com código aberto e demonstrações práticas.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+    <section id="linkedin-insights" class="section bg-dark">
+        <div class="container">
+            <h3 class="section-title text-center">Publicações e Insights no LinkedIn</h3>
+            <p class="section-subtitle">Acompanhe minhas análises e discussões sobre BI, Engenharia de Dados e carreira.</p>
+
+            <div class="carousel-wrapper">
+                
+                <button class="carousel-nav prev" id="prevLinkedIn"><i class="fas fa-chevron-left"></i></button>
+
+                <div class="insights-grid-iframe carousel-container" id="linkedinCarousel">
+                    
+                    <div class="iframe-container carousel-item-linkedin">
+                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7384011105377103872?collapsed=1" height="672" width="504" frameborder="0" allowfullscreen="" title="Publicação incorporada"></iframe>
+                    </div>
+
+                    <div class="iframe-container carousel-item-linkedin">
+                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7381430050744582146?collapsed=1" 
+                                frameborder="0" 
+                                allowfullscreen="" 
+                                title="Publicação incorporada 2">
+                        </iframe>
+                    </div>
+
+                    <div class="iframe-container carousel-item-linkedin">
+                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7384011105377103872?collapsed=1" height="672" width="504" frameborder="0" allowfullscreen="" title="Publicação incorporada"></iframe>
+                    </div>
+
+                </div>
+                
+                <button class="carousel-nav next" id="nextLinkedIn"><i class="fas fa-chevron-right"></i></button>
+
+            </div>
+            
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="https://linkedin.com/in/joaovitordeabreusousa/" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-linkedin"></i> Ver Todas as Publicações no LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <footer id="contact" class="bg-dark">
+        <div class="container">
+            <h3 class="section-title text-center">Conecte-se comigo</h3>
+            <div class="contact-links">
+                
+                <a href="mailto:jvabreusousa12@gmail.com" target="_blank" class="contact-item"><i class="fas fa-envelope"></i> E-mail</a>
+                
+                <a href="https://wa.me/5511940333175?text=Vim%20pelo%20seu%20portfólio%2C%20gostei%20do%20seu%20CV%20e%20gostaria%20de%20conversar." target="_blank" class="contact-item"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                
+                <a href="https://linkedin.com/in/joaovitordeabreusousa/" target="_blank" class="contact-item"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/joaoabreu004" target="_blank" class="contact-item"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+            <p class="footer-note"> Feito com foco em performance e dados. &copy; 2025 João Vitor de Abreu Sousa.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="carousel-effects.js"></script> 
+</body>
+</html>
